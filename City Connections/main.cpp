@@ -31,8 +31,9 @@ bool isCyclic(int V, vector<vector<int> > edges){
                 return true;
             }
         }
-        return false;
+        visited[i] = false;
     }
+    return false;
 }
 
 void DFS(vector<vector<int> > edges, vector<bool> &visited, int start, int end, int &paths)
