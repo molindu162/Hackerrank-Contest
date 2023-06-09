@@ -20,7 +20,6 @@ void DFS(vector<vector<int> > edges, vector<bool> &visited, int start, int end, 
     vector<int> neighbours = edges[start];
     for (int neighbour: neighbours)
     {
-
         if (visited[neighbour] == false) {
             DFS(edges, visited, neighbour, end, isCyclic, paths);
         }
@@ -39,7 +38,6 @@ int countPaths(int n, vector<vector<int> > edges)
     bool isCyclic = false;
     int paths = 0;
     DFS(edges, visited, 0, 4, isCyclic, paths);
-    cout << "Is Cyclic " << isCyclic << endl;
     return paths;
 
 }
@@ -51,13 +49,13 @@ int main()
     a.push_back(2);
 
     vector<int> b;
-    a.push_back(3);
+    b.push_back(3);
 
     vector<int> c;
-    a.push_back(4);
+    c.push_back(4);
 
     vector<int> d;
-    a.push_back(4);
+    d.push_back(4);
 
     vector<int> e;
 
@@ -70,6 +68,7 @@ int main()
 
     int noOfPaths = countPaths(5, edges);
     cout << noOfPaths;
+
 
     return 0;
 }
