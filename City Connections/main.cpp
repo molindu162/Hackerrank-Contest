@@ -3,12 +3,15 @@
 
 using namespace std;
 
-void DFS(){
+void DFS(vector<vector<int> > edges, vector<bool> visited, int start)
+{
 
+    vector<int> neighbours;
 }
 
 void countPaths(int n, vector<vector<int> > edges)
 {
+    vector<bool> visited(false, n);
 }
 
 int main()
