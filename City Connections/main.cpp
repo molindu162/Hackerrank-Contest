@@ -13,29 +13,35 @@ void DFS(vector<vector<int> > edges, vector<bool> &visited, int start, int end, 
     if (start == end)
         paths += 1;
 
-    visited[start] = true;
+    if (start != end){
+        visited[start] = true;
+    }
+
     vector<int> neighbours = edges[start];
     for (int neighbour: neighbours)
     {
-        if (visited[neighbour] == false){
-            visited[neighbour] = true;
+
+        if (visited[neighbour] == false) {
             DFS(edges, visited, neighbour, end, isCyclic, paths);
         }
-        else{
-            isCyclic = true;
-            paths = INT_MAX;
-            return;
-        }
+      else{
+          isCyclic = true;
+          paths = INT_MAX;
+          return;
+      }
+
     }
 }
 
 int countPaths(int n, vector<vector<int> > edges)
 {
-    vector<bool> visited(false, n);
+    vector<bool> visited(5, false);
     bool isCyclic = false;
     int paths = 0;
     DFS(edges, visited, 0, 4, isCyclic, paths);
+    cout << "Is Cyclic " << isCyclic << endl;
     return paths;
+
 }
 
 int main()
