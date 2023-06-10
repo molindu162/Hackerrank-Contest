@@ -59,13 +59,4 @@ int main()
 
     activityNotifications(expenditure, 5);
 
-//    vector<int> expenditure1(5);
-//    partial_sort_copy(expenditure.begin() + 1, expenditure.begin() + 6, expenditure1.begin(), expenditure1.end());
-//    for (int j: expenditure1){
-//        cout << j << endl;
-//
-//    }
-
-
-
 }
